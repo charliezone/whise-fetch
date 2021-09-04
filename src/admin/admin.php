@@ -49,8 +49,11 @@ function whise_page_content(){
             ?>
     
         </form>
-
-        <button id="wfTriggerUpdate">Trigger update</button>
+        <div class="wf-trigger-update">
+            <button id="wfTriggerUpdate">Trigger update</button>
+            <span id="loading-indicator">Loading...</span>
+            <span id="message-text"></span>
+        </div>
     <?php
 }
 
@@ -61,7 +64,7 @@ function handle_token_save_form(){
         print 'Token Issue.';
         exit;
     } else {
-        if( update_option( 'whise_token', $_POST['token'] ) ){
+        if( update_option( 'whise_token', sanitize_text_field($_POST['token']) ) ){
             wp_safe_redirect( urldecode( admin_url('admin.php?page=whise-menu&susses=true') ) );
         }else{
             wp_safe_redirect( urldecode( admin_url('admin.php?page=whise-menu&susses=false') ) );

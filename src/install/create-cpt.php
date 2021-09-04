@@ -13,7 +13,7 @@ function wf_create_cpt(){
             'capability_type' => 'post',
             'hierarchical' => false,
             'rewrite' => true,
-            'supports' => array('title')
+            'supports' => array('title', 'custom-fields')
         )
     );
 }

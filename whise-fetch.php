@@ -11,4 +11,5 @@
 require_once(dirname(__FILE__).'/src/install/create-cpt.php');
 require_once(dirname(__FILE__).'/src/admin/admin.php');
 require_once(dirname(__FILE__).'/src/admin/fetch-whise.php');
+require_once(dirname(__FILE__).'/cron.php');
  
